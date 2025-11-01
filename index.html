@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="pagetitle">Scientific Language & Medical Terminology — </title>
+  <meta name="description" content="Bilingual EN/AR course home page with clickable weekly blocks (1–14), blue theme and RTL support." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#0b5ea8;
+      --brand-dark:#0744cc;
+      --accent:#15a37d;
+      --ink:var(--brand-dark);
+      --muted:#3b82f6;
+      --band:#f3f4f6;
+      --surface:#ffffff;
+      --surface-2:#f9fafb;
+      --border:#cfe3ff;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--ink);background:#f7f9fb}
+    .wrap{max-width:1100px;margin:0 auto;padding:clamp(12px,2vw,24px)}
+
+    /* Topbar */
+    .topbar{background:linear-gradient(90deg,var(--brand) 0%,var(--brand-dark) 100%);color:#fff}
+    .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brandwrap{display:flex;align-items:center;gap:12px}
+    .brand{font-weight:700;font-size:clamp(18px,2.2vw,22px)}
+
+    .langtoggle{display:inline-flex;gap:8px;align-items:center}
+    .langtoggle button{border:0;background:#fff;color:var(--brand);padding:8px 10px;border-radius:10px;font-weight:700;cursor:pointer}
+    .langtoggle button[aria-pressed="true"]{background:#e6f0ff}
+
+    /* Hero */
+    .hero{background:var(--surface);border:2px solid var(--brand);border-radius:16px;padding:clamp(16px,3vw,28px);margin-top:16px;box-shadow:0 8px 30px rgba(11,94,168,.15)}
+    .title{font-size:clamp(22px,3.2vw,32px);color:var(--brand-dark);margin:0 0 6px}
+    .subtitle{color:var(--muted);margin:0 0 12px}
+    .actions{display:flex;flex-wrap:wrap;gap:10px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:12px;border:2px solid var(--brand);text-decoration:none;color:var(--brand);font-weight:600;background:#fff}
+    .btn.primary{background:var(--brand);color:#fff}
+
+    /* Sections */
+    .section{margin-top:22px}
+    .section h2{color:var(--brand-dark);margin:0 0 10px}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:0 6px 20px rgba(11,94,168,.08)}
+
+    /* Topics */
+    .Topics{display:grid;grid-template-columns:1fr;gap:12px}
+    @media(min-width:700px){.Topics{grid-template-columns:1fr 1fr}}
+    details.week{border:1px solid var(--brand);border-radius:14px;overflow:hidden;background:#fff}
+    details.week summary{cursor:pointer;list-style:none;padding:14px 16px;background:var(--brand);color:#fff;display:flex;align-items:center;gap:10px}
+    details.week summary .wbadge{width:34px;height:34px;display:grid;place-items:center;background:rgba(255,255,255,.18);border-radius:10px;font-weight:800}
+    details.week .panel{padding:12px 16px;background:#f0f7ff;color:var(--brand-dark)}
+    .meta{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+    .chip{font-size:12px;border-radius:999px;padding:6px 10px;background:#e6f0ff;color:var(--brand-dark);font-weight:600;border:1px solid var(--border)}
+
+    /* RTL */
+    html.rtl{direction:rtl}
+    html.rtl .Topics details.week summary{flex-direction:row-reverse}
+    html.rtl .actions{direction:rtl}
+
+    footer{margin:28px 0 12px;color:var(--brand-dark);font-size:14px;text-align:center}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brandwrap">
+        <div class="brand" data-i18n="brand"></div>
+      </div>
+      <div class="langtoggle" aria-label="Language toggle">
+        <button id="toEN" aria-pressed="true">EN</button>
+        <button id="toAR" aria-pressed="false">عربي</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1 class="title" data-i18n="title">Scientific Language & Medical Terminology</h1>
+      <p class="subtitle" data-i18n="subtitle">First-Year MBBS / Nursing / Pharmacy • معهد الطموح المتخصص (Abha Center)</p>
+      <div class="actions">
+        <a class="btn primary" href="#Topics"><span data-i18n="browseTopics">Browse Topics</span></a>
+        <a class="btn" href="#outcomes"><span data-i18n="learningOutcomes">Learning Outcomes</span></a>
+      </div>
+    </section>
+
+    <section id="Topics" class="section">
+      <h2 data-i18n="TopicsHeading">Topics 1–14</h2>
+      <div class="Topics">
+        %Topics%
+      </div>
+    </section>
+
+    <section id="outcomes" class="section">
+      <div class="card">
+        <h2 data-i18n="descHeading">Course Description & Outcomes</h2>
+        <ul>
+          <li data-i18n="ilo1">Define roots, prefixes, suffixes, and combining forms.</li>
+          <li data-i18n="ilo2">Interpret complex medical terms and translate them into plain language.</li>
+          <li data-i18n="ilo3">Use directional, positional, diagnostic, and procedural terminology correctly.</li>
+          <li data-i18n="ilo4">Apply professional language in case notes, lab reports, and presentations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer><span data-i18n="footer">©  For registration contact Mr. Mohmmed: 0563642284</span></footer>
+  </main>
+
+  <script>
+    const i18n = {
+      en: {
+        pagetitle:'Scientific Language & Medical Terminology',
+        
+        title:'Scientific Language & Medical Terminology',
+        subtitle:'First-Year MBBS / Nursing / Pharmacy • معهد الطموح المتخصص (Abha Center)',
+        browseTopics:'Browse Topics', learningOutcomes:'Learning Outcomes',
+        TopicsHeading:'Topics 1–14',
+        descHeading:'Course Description & Outcomes',
+        ilo1:'Define roots, prefixes, suffixes, and combining forms.',
+        ilo2:'Interpret complex medical terms and translate them into plain language.',
+        ilo3:'Use directional, positional, diagnostic, and procedural terminology correctly.',
+        ilo4:'Apply professional language in case notes, lab reports, and presentations.',
+        footer:'© For registration contact Mr. Mohmmed: 0563642284'
+      },
+      ar: {
+        pagetitle:'اللغة العلمية والمصطلحات الطبية ',
+        brand:'معهد الطموح المتخصص',
+        title:'اللغة العلمية والمصطلحات الطبية',
+        subtitle:'السنة الأولى طب/تمريض/صيدلة • معهد الطموح المتخصص (مركز أبها)',
+        browseTopics:'تصفح المواضيع', learningOutcomes:'مخرجات التعلم',
+        TopicsHeading:'المواضيع 1–14',
+        descHeading:'وصف المقرر ومخرجات التعلم',
+        ilo1:'تعريف الجذور والبادئات واللواحق وصيغ الربط.',
+        ilo2:'تفسير المصطلحات الطبية المعقدة وترجمتها إلى لغة مبسطة.',
+        ilo3:'استخدام المصطلحات الاتجاهية والموضعية والتشخيصية والإجرائية بدقة.',
+        ilo4:'تطبيق اللغة المهنية في الملاحظات السريرية وتقارير المعمل والعروض التقديمية.',
+        footer:' © رقم التواصل للتسجيل الأستاذ محمد: 0563642284  معهد الطموح المتخصص'
+      }
+    };
+
+    const iw = {
+      en: [
+        {t:'Introduction to Scientific Language', c:['Orientation','Why words matter'], f:'Importance of scientific communication; origin of medical terminology.'},
+        {t:'Structure of Medical Terms', c:['Roots','Prefixes','Suffixes'], f:'Roots, prefixes, suffixes, combining vowels.'},
+        {t:'Greek & Latin in Medicine', c:['Etymology','Word origins'], f:'Historical development and linguistic roots.'},
+        {t:'Directional & Positional Terms', c:['Anatomical planes','Movements'], f:'Orientation words, planes, and movement terminology.'},
+        {t:'Body Systems Terminology', c:['Cardio-','Neuro-','Gastro-'], f:'Word formation by system.'},
+        {t:'Descriptive & Pathological Terms', c:['-itis','-oma','-pathy'], f:'Disease suffixes and descriptive language.'},
+        {t:'Diagnostic & Procedural Terms', c:['-graphy','-ectomy','-scopy'], f:'Diagnostic and procedural roots/suffixes.'},
+        {t:'Clinical Abbreviations & Acronyms', c:['Rx','PRN','q.i.d.'], f:'Common hospital and lab abbreviations.'},
+        {t:'Eponyms & Terminology of Discovery', c:['Alzheimer','Fallopian'], f:'Origins and controversies of eponyms.'},
+        {t:'Terminology in Laboratory Medicine', c:['Units','Reference ranges'], f:'Reports, measurements, and tests.'},
+        {t:'Pharmacological & Therapeutic Terms', c:['Dosage','Routes','Classes'], f:'Drug classes, dosage expressions, routes.'},
+        {t:'Medical Documentation & Case Writing', c:['SOAP','Discharge summary'], f:'Academic and clinical writing standards.'},
+        {t:'Communication & Patient Education Language', c:['Lay terms','Clarity'], f:'Simplifying jargon for patients and peers.'},
+        {t:'Integration & Review', c:['Game-based review','Final prep'], f:'Comprehensive review, integration with Anatomy & Histology.'}
+      ],
+      ar: [
+        {t:'مقدمة في اللغة العلمية', c:['تهيئة','لماذا للكلمات أهمية'], f:'أهمية التواصل العلمي؛ أصل المصطلحات الطبية.'},
+        {t:'بنية المصطلحات الطبية', c:['الجذور','السوابق','اللواحق'], f:'الجذور والبادئات واللواحق وحروف الوصل.'},
+        {t:'اللاتينية واليونانية في الطب', c:['اشتقاق','أصول الكلمات'], f:'التطور التاريخي والجذور اللغوية.'},
+        {t:'المصطلحات الاتجاهية والموضعية', c:['المستويات التشريحية','الحركات'], f:'مصطلحات الاتجاه والمستويات والحركات.'},
+        {t:'مصطلحات أجهزة الجسم', c:['قلبي-','عصبي-','هضمي-'], f:'بناء الكلمات حسب الجهاز.'},
+        {t:'المصطلحات الوصفية والمرضية', c:['-التهاب','-ورم','-اعتلال'], f:'لواحق الأمراض واللغة الوصفية.'},
+        {t:'مصطلحات التشخيص والإجراءات', c:['-تصوير','-استئصال','-منظار'], f:'الجذور واللواحق التشخيصية والإجرائية.'},
+        {t:'الاختصارات الطبية والأحرف الأولى', c:['وصفةRx','عند الحاجة PRN','أربع مرات يوميًا q.i.d.'], f:'الاختصارات الشائعة في المستشفى والمختبر.'},
+        {t:'الأسماء العلم ومصطلحات الاكتشاف', c:['ألزهايمر','فالوب'], f:'أصول الأسماء وقضاياها.'},
+        {t:'المصطلحات في الطب المخبري', c:['الوحدات','المديات المرجعية'], f:'التقارير والقياسات والاختبارات.'},
+        {t:'المصطلحات الدوائية والعلاجية', c:['الجرعات','طرق الإعطاء','الفئات'], f:'فئات الأدوية والجرعات وطرق الإعطاء.'},
+        {t:'التوثيق الطبي وكتابة الحالة', c:['SOAP','الخلاصة عند الخروج'], f:'معايير الكتابة الأكاديمية والسريرية.'},
+        {t:'التواصل ولغة التثقيف الصحي', c:['مصطلحات مبسطة','الوضوح'], f:'تبسيط المصطلحات للمرضى والأقران.'},
+        {t:'الدمج والمراجعة', c:['مراجعة تنافسية','التحضير للنهائي'], f:'مراجعة شاملة وربطها بالتشريح وعلم الأنسجة.'}
+      ]
+    };
+
+    function renderTopics(lang){
+      const data = iw[lang] || iw.en;
+      const container = document.querySelector('.Topics');
+      container.innerHTML = '';
+      data.forEach((w, i) => {
+        const num = i+1;
+        const details = document.createElement('details');
+        details.className = 'week';
+        details.id = 'week-'+num;
+        const summary = document.createElement('summary');
+        summary.innerHTML = '<span class="wbadge">'+num+'</span><span class="wtitle">'+w.t+'</span>';
+        const panel = document.createElement('div'); panel.className='panel';
+        const meta = document.createElement('div'); meta.className='meta';
+        w.c.forEach(ch => { const s=document.createElement('span'); s.className='chip'; s.textContent=ch; meta.appendChild(s); });
+        const p = document.createElement('p'); p.innerHTML = '<strong>'+ (lang==='ar' ? 'التركيز:' : 'Focus:') +'</strong> '+w.f;
+        panel.appendChild(meta); panel.appendChild(p);
+        details.appendChild(summary); details.appendChild(panel);
+        container.appendChild(details);
+      });
+    }
+
+    function setLang(lang){
+      const dict = i18n[lang] || i18n.en;
+      document.documentElement.lang = (lang==='ar')? 'ar':'en';
+      document.documentElement.classList.toggle('rtl', lang==='ar');
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if(dict[key]) el.textContent = dict[key];
+      });
+      document.getElementById('toEN').setAttribute('aria-pressed', lang==='en');
+      document.getElementById('toAR').setAttribute('aria-pressed', lang==='ar');
+      renderTopics(lang);
+      localStorage.setItem('slmt_lang', lang);
+    }
+
+    document.getElementById('toEN').addEventListener('click', ()=>setLang('en'));
+    document.getElementById('toAR').addEventListener('click', ()=>setLang('ar'));
+
+    const saved = localStorage.getItem('slmt_lang');
+    const startLang = saved || ((navigator.language||'en').startsWith('ar') ? 'ar' : 'en');
+    setLang(startLang);
+  </script>
+</body>
+</html>
